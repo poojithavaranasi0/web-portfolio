@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #172235;
+            padding: 35px;
+            border-radius: 12px;
+            width: 320px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: none;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+
+        button {
+            background: #4285f4;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Two-Factor Authentication</h2>
+        <p>Enter the 6-digit code from your Google Authenticator app.</p>
+
+        <form action="/mfa/verify" method="POST">
+            <input
+                type="text"
+                name="token"
+                placeholder="000000"
+                inputmode="numeric"
+                pattern="[0-9]{6}"
+                maxlength="6"
+                required
+            >
+            <br>
+            <button type="submit">Verify Code</button>
+        </form>
+    </div>
+</body>
+</html>
